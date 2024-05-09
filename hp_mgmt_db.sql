@@ -1,24 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Mar 03, 2021 at 01:08 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `hp_mgmt_db`
+-- Database: `hospital`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +28,7 @@ CREATE TABLE `admitpatient_room` (
 --
 
 INSERT INTO `admitpatient_room` (`PatientID`, `Disease`, `AdmitDate`, `RoomNo`, `DoctorID`, `AP_Remarks`) VALUES
-(11111, 'Typhoid fever', '2021-03-02', 1, 1, 'High temp and weakness.');
+(11111, 'fever', '2024-03-02', 1, 1, 'High temperature and weakness.');
 
 -- --------------------------------------------------------
 
@@ -67,9 +54,9 @@ CREATE TABLE `bill_room` (
 --
 
 INSERT INTO `bill_room` (`DischargeID`, `BillingDate`, `RoomCharges`, `ServiceCharges`, `PaymentMode`, `PaymentModeDetails`, `TotalCharges`, `NoOfDays`, `TotalRoomCharges`, `BillNo`) VALUES
-(1, '2015-01-12', 5000, 500, 'by Cash', 'Payment done successfully!', 1485500, 297, 1485000, '120150112'),
-(12, '2015-01-20', 2500, 500, 'by Credit Card', 'NA', 500, 0, 0, '1220150120'),
-(3, '2018-04-15', 5000, 20000, 'by Credit Card', '', 20000, 0, 0, '320180415');
+(1, '2024-01-12', 5000, 500, 'by Cash', 'Payment done successfully!', 1485500, 297, 1485000, '120150112'),
+(12, '2024-01-20', 2500, 500, 'by Credit Card', 'NA', 500, 0, 0, '1220150120'),
+(3, '2024-04-15', 5000, 20000, 'by Credit Card', '', 20000, 0, 0, '320180415');
 
 -- --------------------------------------------------------
 
@@ -88,9 +75,9 @@ CREATE TABLE `dischargepatient_room` (
 --
 
 INSERT INTO `dischargepatient_room` (`AdmitID`, `DischargeDate`, `DP_Remarks`) VALUES
-(1, '2015-01-12', 'Patient recovered successfully!'),
-(12, '2015-01-20', 'Patient is stable'),
-(3, '2018-04-15', 'Patient operated');
+(1, '2024-01-12', 'Patient recovered successfully!'),
+(12, '2024-01-20', 'Patient is stable'),
+(3, '2024-04-15', 'Patient operated');
 
 -- --------------------------------------------------------
 
@@ -116,8 +103,8 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`DoctorID`, `DoctorName`, `FatherName`, `Email`, `ContacNo`, `Qualifications`, `Gender`, `BloodGroup`, `DateOfJoining`, `Address`) VALUES
-(1, 'Ajay Mishra', 'Deepak MIshra', 'ajay123@gmail.com ', '9880876532', 'MD,MBBS', 'M', 'A+', '2014-03-20', '108;Whitefield,Bangalore-560066'),
-(2, 'Anjali Chopra', 'Madan Chopra', 'anjalirox123@gmail.com', '9880756634', 'MD,MBBS', 'F', 'A-', '2016-01-02', '#111;Gayathri Temple;Whitefield;Bangalore-560066');
+(1, 'Adem', 'Adem', 'adem123@gmail.com ', '0770876532', 'doctor', 'M', 'A+', '2014-03-20', 'alger bab ezzouar 8 mai'),
+(2, 'Mohamed', 'Mohamed', 'mohamed123@gmail.com', '07770756634', 'doctor', 'M', 'A-', '2016-01-02', 'Alger dar el bida');
 
 -- --------------------------------------------------------
 
@@ -143,7 +130,7 @@ CREATE TABLE `patientregistration` (
 --
 
 INSERT INTO `patientregistration` (`PatientID`, `PatientName`, `FatherName`, `Email`, `ContactNo`, `Age`, `Remarks`, `Gen`, `BG`, `Address`) VALUES
-(11111, 'Angel Jude Suarez', 'Michael Suarez', 'jude@gmail.com', '09272777334', 25, 'Gwapo nga taho', 'M', 'C++', 'Himamaylan City');
+(11111, 'halli maria', 'mohamed', 'hallimaria@gmail.com', '077272777334', 19, 'none', 'F', 'C++', 'Alger');
 
 -- --------------------------------------------------------
 
@@ -164,11 +151,10 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`name`, `user_name`, `password`, `email_id`, `contact_no`) VALUES
-('akshay', 'ak', 'akshay', 'xyz', 41162171),
-('Akash', 'akash', '12345', 'akash.agarwal', 41162171),
-('akshay', 'aksh', 'aksh', 'aksh@gmail.com', 41162181),
-('anurag', 'anu', 'anu123', 'sampath.anurag@gmail.com', 80956835),
-('avit', 'avit', 'avit', 'avit', 213);
+('halli', 'halli', '123', 'xyz', 0641162171),
+('mnkour', 'mnkour', '12345', 'none', 05541162171),
+('sofian', 'sofian', '123', 'sofian@gmail.com', 0550956835),
+('hadjer', 'hadjer', '4534', 'hadjer@gmail.com', 213);
 
 -- --------------------------------------------------------
 
@@ -229,11 +215,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_name`, `password`) VALUES
-('ak', '12345'),
-('akash', '123456'),
-('aksh', 'akash'),
-('anu', 'anu123'),
-('avit', 'akash');
+('halli', '123'),
+('sofian', '123'),
+('mnkour', '12345'),
+('hadjer', '3543');
 
 --
 -- Indexes for dumped tables
@@ -311,6 +296,3 @@ ALTER TABLE `admitpatient_room`
   ADD CONSTRAINT `admitpatient_room_ibfk_2` FOREIGN KEY (`DoctorID`) REFERENCES `doctor` (`DoctorID`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
