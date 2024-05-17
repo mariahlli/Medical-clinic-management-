@@ -26,7 +26,7 @@ This project is written in JAVA using the database MySQL.
    (you can change the password but then you gotta change it in the source code too).
 6. **Run the code**:Now that everything is set you can run the code.
   ## Report
-  For a detailed report about the project, please refer to the accompanying PDF file titled `clinicmanagmentsystem_Report.pdf`.
+  For a detailed report about the project, please refer to the accompanying PDF file titled `medicsl_clinic_managment_Report.pdf`.
   ## Dependencies
   - all required **JAVA** **MySQL command line** and **JAVA Ide** the necessary classes are in **src**.
 - it's better if you open it in eclipse ide .
